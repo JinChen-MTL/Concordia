@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        //remainder: lots difference when const linked to a object
+        const greeting = {
+            message: "say Hi",
+            times: 4
+        }
+        greeting.fek = "dwad";//add property in to const obj is okay
+        console.log(greeting);
+        greeting.message = "say Hello instead";//change property into const obj is okay
+        console.log(greeting);
+        delete greeting.fek;
+        console.log(greeting);//delete property
+
+        greeting = {
+            message: 'say Hello change', times: 5
+        } // error:  even property got the same name,value cant be changed as well.
+
+        //hoist is same as let,not initialized at the first place,reference error.
+    </script>
+    <script>
+        //Variables declared with the 'const' maintain constant values
+
+        //const declarations are block scoped,can be access only within scope that declared
+        //can't be updated or re-declared
+
+        const greeting = "say Hi";
+        greeting = "say Hello instead";// error: Assignment to constant variable. 
+        console.log(greeting);
+
+        const greeting = "say Hi";
+        const greeting = "say Hello instead";
+        // error: Identifier 'greeting' has already been declared
+    </script>
+</body>
+
+</html>

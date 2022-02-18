@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <script>
+        var k=12;
+        console.log(k);
+
+    </script>
+    <script>
+        k=13;
+        console.log(k);
+
+    </script>
+    <script>
+    //VAR declarations are globally scoped or function/locally scoped.
+    tester = "hey hi";
+    function newFunction() {
+    var hello = "hello";
+    console.log(hello);//function scope works;
+    }
+    newFunction();//initiate the function scope
+    console.log(tester);//global scope
+    console.log(hello); /*error: hello is not defined,function scope
+    only available in the function*/
+
+    //can be re-declared and updated
+    var greeter = "hey hi";
+    var greeter = "say Hello instead";//re-declared
+
+    var greeter = "hey hi";
+    greeter = "say Hello instead";//updated
+
+    //Hoisting of var
+    console.log(greeter);
+    var greeter = "say hello";
+    //will be interpreted as:
+    var greeter;
+    console.log(greeter); // greeter is undefined
+    greeter = "say hello"
+
+    //weakness with VAR
+    var greeter = "hey hi";
+    var times = 4;
+    if (times > 3) {
+    var greeter = "say Hello instead";
+    }
+    console.log(greeter) // "say Hello instead"
+    /*you wont know whether you have use greeter in
+    other parts of your code before,it will be changed.*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <h1>Math object</h1>
+    <p id="demo1">demo 1</p>
+    <p id="demo2">demo 2</p>
+    <p id="demo3">demo 3</p>
+    <p id="demo4">demo 4</p>
+    <p id="demo5">demo 5</p>
+    <p id="demo6">demo 6</p>
+    <p id="demo7">demo 7</p>
+
+    <script>
+        document.getElementById("demo1").innerHTML = Math.round(4.6);
+        document.getElementById("demo2").innerHTML = Math.floor(-4.2);
+        document.getElementById("demo3").innerHTML = Math.trunc(4.4);
+        document.getElementById("demo4").innerHTML = Math.sign(-1351);
+        document.getElementById("demo5").innerHTML = Math.sqrt(64);
+        document.getElementById("demo6").innerHTML = Math.pow(8, 2);
+        document.getElementById("demo7").innerHTML = Math.abs(-4.7);
+    </script>
+
+    <h1>Date object</h1>
+    <p id="demo8">demo 8</p>
+    <p id="demo9">demo 9</p>
+    <p id="demo10">demo 10</p>
+    <p id="demo11">demo 11</p>
+    <p id="demo12">demo 12</p>
+    <p id="demo13">demo 13</p>
+    <p id="demo14">demo 14</p>
+    <script>
+        const d1 = new Date();
+        //current date and time
+        const d2 = new Date(2018, 15, 24, 10, 33, 30);
+        //specified date and time year,month,day,hr,mins...
+        const d3 = new Date(2019, 3, 24, 10, 33, 30);
+        //same as the previous as dec is 11,will create overflow
+        const d4 = new Date(2018);
+        //You cannot omit month. If you supply only one parameter it will be treated as milliseconds.
+        const d5 = new Date(99, 11, 24);
+        const d6 = new Date(9, 11, 24);
+        //One and two digit years will be interpreted as 19xx:
+        var toDay = new Date("December 12, 2021 23:55:10");
+
+        document.getElementById("demo8").innerHTML = d1;
+        document.getElementById("demo9").innerHTML = d2;
+        document.getElementById("demo10").innerHTML = d3;
+        document.getElementById("demo11").innerHTML = d4;
+        document.getElementById("demo12").innerHTML = d5;
+        document.getElementById("demo13").innerHTML = d6;
+        document.getElementById("demo14").innerHTML = toDay.getDate();
+
+
+    </script>
+
+    <h1>Date object</h1>
+    <p id="demo8">demo 8</p>
+    <p id="demo9">demo 9</p>
+    <p id="demo10">demo 10</p>
+    <p id="demo11">demo 11</p>
+    <p id="demo12">demo 12</p>
+    <p id="demo13">demo 13</p>
+    <p id="demo14">demo 14</p>
+    <script>
+        const d1 = new Date();
+        //current date and time
+        const d2 = new Date(2018, 15, 24, 10, 33, 30);
+        //specified date and time year,month,day,hr,mins...
+        const d3 = new Date(2019, 3, 24, 10, 33, 30);
+        //same as the previous as dec is 11,will create overflow
+        const d4 = new Date(2018);
+        //You cannot omit month. If you supply only one parameter it will be treated as milliseconds.
+        const d5 = new Date(99, 11, 24);
+        const d6 = new Date(9, 11, 24);
+        //One and two digit years will be interpreted as 19xx:
+        var toDay = new Date("December 12, 2021 23:55:10");
+        document.getElementById("demo8").innerHTML = d1;
+        document.getElementById("demo9").innerHTML = d2;
+        document.getElementById("demo10").innerHTML = d3;
+        document.getElementById("demo11").innerHTML = d4;
+        document.getElementById("demo12").innerHTML = d5;
+        document.getElementById("demo13").innerHTML = d6;
+        document.getElementById("demo14").innerHTML = toDay.getDate();
+    </script>
+
+
+    <h1>Typeof object</h1>
+    <p id="demo15">demo 15</p>
+    <script>
+        t = new Boolean(213123);
+        document.getElementById("demo15").innerHTML =
+            typeof t;
+        var num1 = "A String";
+        document.write(typeof num1); //OUTPUT: string
+        document.write("<br>");
+        var num2 = new Number(1234567890); //OUTPUT: object
+        document.write("<br>");
+        document.write(typeof num2);
+        var num3 = BigInt(1234567890); //OUTPUT: bigint
+        document.write("<br>");
+        document.write(typeof num3);
+        var num4 = new Boolean(false); //OUTPUT: object
+        document.write("<br>");
+        document.write(typeof num4);
+        var num5 = 1234567890; //OUTPUT: number
+        document.write("<br>");
+        document.write(typeof num5);
+    </script>
+
+</body>
+
+</html>

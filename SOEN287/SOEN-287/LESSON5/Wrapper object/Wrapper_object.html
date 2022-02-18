@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var str1 = "SOEN-287";
+        str1.prop1 = 'COMP-248';
+        function function1() {
+            document.getElementById("dBox1").innerHTML = str1;
+            document.getElementById("dBox2").innerHTML = str1.prop1;//undefined
+        }
+        var st3 = str1.funcMeth1 = "dwadaw";
+
+    </script>
+    <script>
+        function function2() {
+            var num1 = 1234567890;
+            var num2 = num1.toFixed(3); //In-Bult. (Instance) Method
+            num2.prop1 = 287; //User-Defined Property
+            num2.funcMeth2 = function () { //User-Defined Method
+                return "Student in SOEN-287";
+            };
+            var num3 = Number.isInteger(num2); //In-Blt (Static) Method
+
+            /* OUTPUT: 1234567890 (Primitive Type) */
+            document.getElementById("dBox4").innerHTML = num1;
+            /* OUTPUT: 1234567890.000 (1-Time Wrapper Object) */
+            document.getElementById("dBox5").innerHTML = num2;
+            /* OUTPUT: false (1-Time Wrapper Object) */
+            document.getElementById("dBox6").innerHTML = num3;
+            /* undefined: not(Exposed) → user defined(Property) */
+            document.getElementById("dBox7").innerHTML =
+                num2.prop1;
+            /* Error: not(Exposed) → user defined(Method) */
+            document.getElementById("dBox8").innerHTML =
+                num2.funcMeth2();
+            //last one should be error as its not a object.
+        }
+    </script>
+
+    <script>
+        function function3() {
+            var num11 = new Number(1234567890);
+            num11.prop11 = 287; //User-Defined Property
+            num11.funcMeth11 = function () { //User-Defined Method
+                return "Student in SOEN-287";
+            };
+            var num21 = num11.toFixed(3); //In-Bult. (Instance) Method
+            var num31 = Number.parseFloat(num11); //In-Blt (Static) Method
+
+            /* OUTPUT: 1234567890 (Wrapper Object) */
+            document.getElementById("dBox9").innerHTML = num11;
+            /* OUTPUT: 1234567890.000 (Wrapper Object) */
+            document.getElementById("dBox10").innerHTML = num21;
+            /* OUTPUT: 1234567890 (Wrapper Object) */
+            document.getElementById("dBox11").innerHTML = num31;
+            /* 287: Exposed → user defined(Property) */
+            document.getElementById("dBox12").innerHTML =
+                num11.prop11;
+            /* Student in SOEN-287: Expose → user defined(Meth) */
+            document.getElementById("dBox13").innerHTML =
+                num11.funcMeth11();
+        }
+    </script>
+</head>
+
+<body>
+    <p id="dBox1">Hello,fill 1 out!</p>
+    <p id="dBox2">Hello,fill 2 out!</p>
+    <p id="dBox3">Hello,fill 3 out!</p>
+    <script>
+        function1();
+        document.getElementById("dBox3").innerHTML = st3;
+    </script>
+
+    <p id="dBox4">Hello,fill 4 out!</p>
+    <p id="dBox5">Hello,fill 5 out!</p>
+    <p id="dBox6">Hello,fill 6 out!</p>
+    <p id="dBox7">Hello,fill 7 out!</p>
+    <p id="dBox8">Hello,fill 8 out!</p>
+    <script>
+        function2();
+    </script>
+    <p id="dBox9">Hello,fill 9 out!</p>
+    <p id="dBox10">Hello,fill 10 out!</p>
+    <p id="dBox11">Hello,fill 11 out!</p>
+    <p id="dBox12">Hello,fill 12 out!</p>
+    <p id="dBox13">Hello,fill 13 out!</p>
+    <script>
+        function3();
+    </script>
+
+
+</body>
+
+</html>

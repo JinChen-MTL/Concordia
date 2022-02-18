@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        //let is block scoped,ex:inside of {};Anything within curly braces is a block
+
+        /*a variable declared in a block with let  is onlyavailable for use within
+        that block. Let me explain this with an example:*/
+        let greeting = "say Hi";
+        let times = 4;//global scope,but cant change inblock 'let';
+        if (times > 3) {
+            let times = 5;//redeclared in different scope will be okay
+            let hello = "say Hello instead";
+            console.log(times);// function scope away from the outra one,output:5
+            console.log(hello);// "say Hello instead"
+        }
+        console.log(times) // global scope,output:4
+        //console.log(hello);  hello is not defined
+
+        let funny = "happy";
+        funny = "not happy";//can be updated but not re-declared.
+        console.log(funny)
+
+        let joking = "fuck";
+        //let joking = "new fuck"; // error:can't be redeclared
+        //console.log(joking)
+
+        //hosting of let
+        console.log(greeter);
+        let test = "say hello";
+        //Unlike var which is initialized as undefined, the let keyword is not initialized.
+        //so if use it before declaration,will get 'Reference Error';
+    </script>
+</body>
+
+</html>
